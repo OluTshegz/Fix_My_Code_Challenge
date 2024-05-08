@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   
   def index
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.where(online: true)
   end
 
   def new
@@ -46,6 +46,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :content, :online)
     end
 end

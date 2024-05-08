@@ -1,6 +1,15 @@
 <% @posts.each do |post| %>
-<div class="post_wrapper">
-  <h2 class="title"><%= link_to post.title, post %></h2>
-  <p class="date"><%= post.created_at.strftime("%B, %d, %Y") %></p>
-</div>
+  <% if post.online %>
+    <div class="post_wrapper">
+      <h2 class="title"><%= link_to post.title, post %></h2>
+      <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+      <p class="online-status">Online</p>
+    </div>
+  <% else %>
+    <div class="post_wrapper">
+      <h2 class="title"><%= post.title %></h2>
+      <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+      <p class="online-status">Offline</p>
+    </div>
+  <% end %>
 <% end %>
