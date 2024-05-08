@@ -24,7 +24,7 @@ class Square():
     @width.setter
     def width(self, value):
         """Sets the value of the width"""
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -38,22 +38,22 @@ class Square():
     @height.setter
     def height(self, value):
         """Sets the value of the height"""
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
     def area_of_my_square(self):
-        """ Area of the square """
-        return self.width * self.width
+        """Area of the square"""
+        return self.__width * self.__height
 
     def perimeter_of_my_square(self):
-        """ Perimeter of the square """
-        return (self.width * 2) + (self.height * 2)
+        """Perimeter of the square"""
+        return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        """ Returns the string representation of the square """
+        """Returns the string representation of the square"""
         return "{}/{}".format(self.width, self.height)
 
 
