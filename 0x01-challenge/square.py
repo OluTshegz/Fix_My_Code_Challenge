@@ -10,8 +10,8 @@ class Square():
         Is a class constuctor that initializes
         the width and height of the square
         Args:
-            width (int):
-            height (int):
+            width (int): The width of the Square
+            height (int): The height of the Square
         """
         self.width = width
         self.height = height
